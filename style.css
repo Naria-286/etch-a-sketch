@@ -3,3 +3,18 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 25vw;
+    height: 33vw;
+}
+.hover {
+    background-color: black;
+}
