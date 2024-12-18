@@ -1,6 +1,7 @@
 let container = document.querySelector("#container")
 
-let gridSize = 10
+// let gridSize = prompt("Enter Grid Size:",10) //Removed for testing
+let gridSize = 25
 let itemSize = (100/gridSize)
 
 function getRandom() {
@@ -13,7 +14,7 @@ for (let i = 0; i < gridSize; i++) {
         gridItem.classList.add(`${i}-${j}`) // Temp to keep track of grid
 
         // Currently messing with the sizing of each grid item
-        gridItem.style.cssText = ``
+        gridItem.style.cssText = `width:${itemSize}%; height:${itemSize}%`
 
         // Color Differentiation
         let blue = getRandom()
