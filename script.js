@@ -1,9 +1,23 @@
 
 const container = document.querySelector("#container")
 const gridBtn = document.querySelector("#change-grid")
+function getRandomNum () {
+    return Math.floor(Math.random() * 256);
+}
+
 function changeColor (e){
-    let element = e.target
-    element.classList.add("change-color")
+    let square = e.target
+
+    if (square.id === "container") {return}
+
+    let blue = getRandomNum()
+    let green = getRandomNum()
+    let red = getRandomNum()
+    if (e.shiftKey){
+        square.style.backgroundColor = `rgb(${red},${green},${blue})`
+    } else {
+        square.classList.add("change-color")
+    }
 }
 function getGridSize (){
     let size = prompt("Enter Grid Size:")
@@ -32,18 +46,11 @@ function renderGrid (){
     
             gridItem.classList.add("grid-item")
             gridItem.style.cssText = `width:${itemSize}%; height:${itemSize}%`
-            gridItem.addEventListener("mouseover", changeColor)
-    
             
             container.appendChild(gridItem)
         }
         
     }
+    container.addEventListener("mouseover", changeColor)
     gridBtn.textContent = `Change Grid Size: ${gridSize}`
 }
-
-renderGrid()
-
-
-// refactor idea: event delegation for changeColor
-// idea render grid default for first start 
