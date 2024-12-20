@@ -1,6 +1,6 @@
 
 const container = document.querySelector("#container")
-
+const gridBtn = document.querySelector("#change-grid")
 function changeColor (e){
     let element = e.target
     element.classList.add("change-color")
@@ -32,7 +32,6 @@ function renderGrid (){
     
             gridItem.classList.add("grid-item")
             gridItem.style.cssText = `width:${itemSize}%; height:${itemSize}%`
-            // gridItem.classList.add(`${i}-${j}`) // Temp to keep track of grid
             gridItem.addEventListener("mouseover", changeColor)
     
             
@@ -40,6 +39,7 @@ function renderGrid (){
         }
         
     }
+    gridBtn.textContent = `Change Grid Size: ${gridSize}`
 }
 
 renderGrid()
