@@ -54,3 +54,5 @@ function renderGrid (){
     container.addEventListener("mouseover", changeColor)
     gridBtn.textContent = `Change Grid Size: ${gridSize}`
 }
+// Initial
+renderGrid()
